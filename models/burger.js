@@ -23,8 +23,8 @@ let burger = {
 
 
 updateOne: function (newInfoObj, rowId, cb) {
-
-        orm.updateOne("burgers", newInfoObj, rowId, function(res){
+console.log("rowID:" + rowId)
+        orm.updateOne("burgers", rowId, function(res){
 
             cb(res)
         })

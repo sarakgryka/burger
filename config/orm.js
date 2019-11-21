@@ -17,10 +17,12 @@ let orm = {
 
 
     insertOne: function (table, column, value, cb) {
+
+        console.log(value);
         let sqlQuery = `INSERT INTO ${table}(${column}) VALUE("${value}")`
 
         console.log(sqlQuery)
-        connection.query(sqlQuery, value, function (err, result) {
+        connection.query(sqlQuery, function (err, result) {
             if (err) {
                 throw err;
             }
@@ -32,10 +34,10 @@ let orm = {
     },
 
 
-    updateOne: function (table, newInfoObj, rowId, cb) {
+    updateOne: function (table, rowId, cb) {
 
 
-        let sqlQuery = `UPDATE ${table} SET ${newInfoObj} WHERE ${rowId};`
+        let sqlQuery = `UPDATE ${table} SET devoured=true WHERE id=${rowId};`
         console.log(sqlQuery);
         connection.query(sqlQuery, function (err, result) {
             if (err) {

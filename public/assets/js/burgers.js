@@ -1,37 +1,45 @@
-$(function() {
+$(function () {
 
-    $(".create-form").on("submit", function(event){
-
-
+    $(".create-form").on("submit", function (event) {
 
 
-        event.preventDefault();
+        // event.preventDefault();
 
         let newBurger = $("#burg").val().trim();
+        let newBurgerObj = { burger_name: newBurger };
 
-
+        console.log(newBurger)
         $
-        .post("/api/burgers", newBurger)
-        .then(function(response){
+            .post("/api/burgers", newBurgerObj)
+            .then(function (response) {
 
+                location.reload();
 
-            console.log(response)
-        })
+            })
+           
 
     })
 
+    $(".devour").on("click", function () {
+        let id = $(this).attr("data-id")
 
+        console.log(id);
+        $.ajax(`/api/burgers/${id}`, {
 
+            type: "PUT",
+            success: function (data, status) {
 
+                console.log(data)
+               
 
+            }
+         
+            
+        })
 
-
-
-
-
-
-
-
+        location.reload();
+        
+    })
 
 
 
