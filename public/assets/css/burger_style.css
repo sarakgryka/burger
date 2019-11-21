@@ -1,4 +1,15 @@
 .row {
 
-    padding: 40px;
+    padding: 20px;
+}
+
+body {
+
+    background-image: url("../img/burgers.jpg");
+}
+
+.info {
+
+    background-color: lightgray;
+    padding: 5px;
 }
