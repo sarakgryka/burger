@@ -1,7 +1,5 @@
 const express = require("express");
 
-
-
 const orm = require("./config/orm")
 
 var PORT = process.env.PORT || 3000;

@@ -8,7 +8,7 @@ $(function () {
         let newBurger = $("#burg").val().trim();
         let newBurgerObj = { burger_name: newBurger };
 
-        console.log(newBurger)
+        // console.log(newBurger)
         $
             .post("/api/burgers", newBurgerObj)
             .then(function (response) {
@@ -23,13 +23,13 @@ $(function () {
     $(".devour").on("click", function () {
         let id = $(this).attr("data-id")
 
-        console.log(id);
+        // console.log(id);
         $.ajax(`/api/burgers/${id}`, {
 
             type: "PUT",
             success: function (data, status) {
 
-                console.log(data)
+                console.log("this is data" + data)
                
 
             }
